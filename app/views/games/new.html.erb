@@ -1,0 +1,25 @@
+<h1>Games#new</h1>
+<p>Find me in app/views/games/new.html.erb</p>
+<div class="container">
+  <div class="row">
+    <% @letters.each {|letter| %>
+    <div class="col-sm">
+      <div class="blue">
+        <%= letter %>
+      </div>
+    </div>
+    <% } %>
+  </div>
+</div>
+<br>
+<form action="score" method="post" data-turbo="false">
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+  <div class="input-group mb-3">
+
+    <input type="text" class="form-control" placeholder="type your word" id="search" name="word" aria-label="type your word" aria-describedby="basic-addon2">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="submit" style = "background-color: rgb(35, 105, 185); color:white">Button</button>
+    </div>
+  </div>
+</form>
